@@ -11,6 +11,7 @@ const SearchButton = ({onClick}: SearchButtonProps) => {
     <button
       onClick={onClick}
       className="w-12 h-12 flex justify-center items-center rounded-full"
+      type="button"
     >
       <MagnifyingGlassIcon className="w-6 h-6 text-promart-orange" />
     </button>
