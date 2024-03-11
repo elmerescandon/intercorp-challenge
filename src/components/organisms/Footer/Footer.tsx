@@ -32,6 +32,14 @@ const Footer = () => {
           "Términos y condiciones de compra",
         ]}
       />
+      <FooterSection
+        title="Desarrollador"
+        section={[
+          "Web Developer Challenge for Intercorp",
+          "Elmer Raúl Escandón Tufino",
+          "elmer.escandontufino@gmail.com",
+        ]}
+      />
     </div>
   );
 };
