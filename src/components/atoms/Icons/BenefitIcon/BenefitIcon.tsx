@@ -6,7 +6,9 @@ type BenefitIconProps = {
 
 const BenefitIcon = ({icon}: BenefitIconProps) => {
   return (
-    <div className="w-24 h-32 rounded-l-3xl bg-promart-orange ">{icon}</div>
+    <div className="w-24 h-32 rounded-l-3xl bg-promart-orange flex justify-center items-center ">
+      {icon}
+    </div>
   );
 };
 
