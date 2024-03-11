@@ -9,7 +9,7 @@ type ProductSecondaryProps = {
 const ProductSecondary = ({product}: ProductSecondaryProps) => {
   const {description, characteristics} = product;
   return (
-    <div className="flex gap-8 justify-center items-start w-full ">
+    <div className="flex gap-8 justify-center items-start w-full max-lg:flex-col ">
       <ProductDetail title="Descripción" description={description} />
       <ProductDetail title="Características" description={characteristics} />
     </div>
