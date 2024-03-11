@@ -5,7 +5,7 @@ import React from "react";
 
 const BenefitSection = () => {
   return (
-    <div className="flex flex-col gap-2 w-full">
+    <div className="flex flex-col gap-8 w-full">
       <Header3 text="Beneficios para ti" />
       <div className="flex gap-8 justify-center flex-wrap">
         {benefitConstants.map((benefit, index) => {
