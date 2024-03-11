@@ -9,7 +9,7 @@ type ProductMainProps = {
 const ProductMain = ({product}: ProductMainProps) => {
   const {imageURL, name} = product;
   return (
-    <div className="flex justify-between w-full max-w-[1120px]  ">
+    <div className="flex justify-between w-full max-w-[1120px] max-lg:flex-col ">
       <img
         src={imageURL}
         alt={`img-${name}`}
