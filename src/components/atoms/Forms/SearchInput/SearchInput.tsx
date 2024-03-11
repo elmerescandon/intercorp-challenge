@@ -1,8 +1,13 @@
 import React from "react";
 
-const SearchInput = () => {
+type SearchInputProps = {
+  reference: React.RefObject<HTMLInputElement>;
+};
+
+const SearchInput = ({reference}: SearchInputProps) => {
   return (
     <input
+      ref={reference}
       type="text"
       placeholder="Ingresa un SKU"
       className="bg-transparent border-0 border-gray-300   
