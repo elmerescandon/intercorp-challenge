@@ -1,12 +1,9 @@
-"use client";
-import ProductMain from "@/components/molecules/ProductMain/ProductMain";
+"use client";import ProductMain from "@/components/molecules/ProductMain/ProductMain";
 import ProductSpecificationSection from "@/components/molecules/ProductSpecificationSection/ProductSpecificationSection";
 import Footer from "@/components/organisms/Footer/Footer";
 import Header from "@/components/organisms/Header/Header";
 import ProductSecondary from "@/components/organisms/ProductSecondary/ProductSecondary";
 import {IProduct, IProductSpecification} from "@/utils/interfaces";
-import {productPageMockup} from "@/utils/mockups/productPageMockup";
-import {productSpecsMockup} from "@/utils/mockups/productSpecsMockup";
 import VTEXFetch from "@/utils/services/VTEX/VTEX.service";
 import {VTEXProductSpecs, VTEXProductToProduct} from "@/utils/utils";
 import React, {useEffect, useState} from "react";
@@ -16,10 +13,9 @@ type ProductPageProps = {
 };
 
 const ProductPage = ({productId}: ProductPageProps) => {
-  const [product, setProduct] = useState<IProduct | null>(productPageMockup);
+  const [product, setProduct] = useState<IProduct | null>(null);
   const [specs, setSpecs] = useState<IProductSpecification[]>([]);
   const [alert, setAlert] = useState("");
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async (productId: string) => {
