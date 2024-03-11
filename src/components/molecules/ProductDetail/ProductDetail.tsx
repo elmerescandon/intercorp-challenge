@@ -9,7 +9,7 @@ type ProductDetailProps = {
 
 const ProductDetail = ({title, description}: ProductDetailProps) => {
   return (
-    <div className="flex flex-col gap-2 w-[544px]">
+    <div className="flex flex-col gap-2 w-[544px] max-lg:w-full">
       <div className="flex gap-2 items-center w-full">
         <DocumentTextIcon className="w-8 h-8 text-promart-orange" />
         <Header3 text={title} />
