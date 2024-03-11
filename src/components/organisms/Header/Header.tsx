@@ -1,4 +1,4 @@
-import LogoLink from "@/components/atoms/LogoLink/LogoLink";
+import LogoLink from "@/components/atoms/Links/LogoLink/LogoLink";
 import React from "react";
 
 const Header = () => {
