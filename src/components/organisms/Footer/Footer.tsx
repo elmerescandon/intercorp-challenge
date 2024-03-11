@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-promart-dark-gray flex justify-start h-1/3 py-8 px-40  gap-8">
+    <div className="bg-promart-dark-gray flex justify-start h-1/3 py-8 px-40 gap-8 max-lg:px-4 flex-wrap">
       <FooterSection
         title="Contáctanos"
         section={[
