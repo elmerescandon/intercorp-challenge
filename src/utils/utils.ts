@@ -8,6 +8,13 @@ export const VTEXProductToProduct = (product: IVTEXProduct): IProduct => {
     return splitPath[splitPath.length - 1];
   };
 
+  let characteristics = "";
+  try {
+    characteristics = product.Características.join(", ") || "";
+  } catch (e) {
+    characteristics = "";
+  }
+
   return {
     name: product.productName,
     category: getLastCategory(product.categories),
@@ -23,7 +30,7 @@ export const VTEXProductToProduct = (product: IVTEXProduct): IProduct => {
     SKU: product.items[0].itemId,
     url: product.link,
     description: product.description,
-    characteristics: product.Características.join(", "),
+    characteristics: characteristics,
     imageURL: product.items[0].images[0].imageUrl,
   };
 };
@@ -42,4 +49,8 @@ export const VTEXProductSpecs = (
     });
   });
   return specs;
+};
+
+export const delay = async (ms: number) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 };
