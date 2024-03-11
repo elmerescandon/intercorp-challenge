@@ -7,7 +7,7 @@ import Footer from "@/components/organisms/Footer/Footer";
 import Header from "@/components/organisms/Header/Header";
 import {IProduct} from "@/utils/interfaces";
 import VTEXFetch from "@/utils/services/VTEX/VTEX.service";
-import {VTEXProductToProduct} from "@/utils/utils";
+import {VTEXProductToProduct, delay} from "@/utils/utils";
 import React, {useState} from "react";
 
 const ProductSearch = () => {
@@ -17,18 +17,20 @@ const ProductSearch = () => {
 
   const handleSearch = async (value: string) => {
     try {
+      setAlert("");
       setLoading(true);
+      await delay(300);
       const product = await VTEXFetch.getProductBySearch(value);
       if (product.length === 0) {
         setAlert("No se encontró el SKU indicado.");
+        setLoading(false);
         return;
       }
       setProduct(VTEXProductToProduct(product[0]));
-
       setLoading(false);
     } catch (e) {
       setLoading(false);
-      setAlert("Error al recibir data de PROMART, inténtelo más tarde");
+      setAlert((e as Error).message);
     }
   };
 
@@ -42,8 +44,9 @@ const ProductSearch = () => {
             handleSearch={handleSearch}
             alert={alert}
             setAlert={setAlert}
+            loading={loading}
           />
-          {product && <ProductCard product={product} />}
+          {!loading && product && <ProductCard product={product} />}
           <BenefitSection />
         </div>
       </div>
