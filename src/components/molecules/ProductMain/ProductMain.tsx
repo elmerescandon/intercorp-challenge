@@ -1,5 +1,4 @@
 import {IProduct} from "@/utils/interfaces";
-import Image from "next/image";
 import React from "react";
 import ProductInfo from "../ProductInfo/ProductInfo";
 
@@ -8,11 +7,11 @@ type ProductMainProps = {
 };
 
 const ProductMain = ({product}: ProductMainProps) => {
-  const {url, name} = product;
+  const {imageURL, name} = product;
   return (
     <div className="flex justify-between w-full max-w-[1120px]  ">
       <img
-        src={url}
+        src={imageURL}
         alt={`img-${name}`}
         className="max-w-[448px] object-contain"
       />
