@@ -1,4 +1,5 @@
-"use client";import Header1 from "@/components/atoms/Text/Header1/Header1";
+"use client";
+import Header1 from "@/components/atoms/Text/Header1/Header1";
 import ProductCard from "@/components/molecules/ProductCard/ProductCard";
 import SearchBar from "@/components/molecules/SearchBar/SearchBar";
 import BenefitSection from "@/components/organisms/BenefitSection/BenefitSection";
@@ -62,7 +63,14 @@ const ProductSearch = () => {
           </div>
         )}
         {state === 2 && product && (
-          <ProductPage product={product} specs={specs} />
+          <ProductPage
+            product={product}
+            specs={specs}
+            back={() => {
+              setState(1);
+              setProduct(null);
+            }}
+          />
         )}
       </div>
       <Footer />
