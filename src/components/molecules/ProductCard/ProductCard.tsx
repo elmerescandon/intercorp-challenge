@@ -1,4 +1,5 @@
-import React from "react";import ProductInfo from "../ProductInfo/ProductInfo";
+import React from "react";
+import ProductInfo from "../ProductInfo/ProductInfo";
 import {IProduct} from "@/utils/interfaces";
 
 type ProductCardProps = {
@@ -9,7 +10,7 @@ type ProductCardProps = {
 const ProductCard = ({product, goDetail}: ProductCardProps) => {
   const {imageURL, name} = product;
   return (
-    <div className="flex justify-between w-full max-w-[1120px]  ">
+    <div className="flex justify-between w-full max-w-[1120px] max-lg:flex-col">
       <img
         src={imageURL}
         alt={`img-${name}`}
