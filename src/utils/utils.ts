@@ -3,9 +3,9 @@ import {IVTEXProduct} from "./services/VTEX/VTEX.interface";
 
 export const VTEXProductToProduct = (product: IVTEXProduct): IProduct => {
   const getLastCategory = (categories: string[]): string => {
-    const lastCategoryPath = categories[categories.length - 1];
+    const lastCategoryPath = categories[0];
     const splitPath = lastCategoryPath.split("/");
-    return splitPath[splitPath.length - 1];
+    return splitPath[splitPath.length - 2];
   };
 
   let characteristics = "";
