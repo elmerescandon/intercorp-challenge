@@ -1,4 +1,5 @@
-import ProductPage from "@/components/template/ProductPage/ProductPage";import React from "react";
+import ProductPage from "@/components/template/ProductPage/ProductPage";
+import React from "react";
 
 export async function generateStaticParams() {
   return [{productId: "140558"}, {productId: "146570"}];
@@ -6,11 +7,7 @@ export async function generateStaticParams() {
 
 const page = ({params}: {params: {productId: string}}) => {
   const {productId} = params;
-  return (
-    <div>
-      <ProductPage productId={productId} />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default page;

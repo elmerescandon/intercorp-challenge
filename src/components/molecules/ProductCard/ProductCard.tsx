@@ -1,14 +1,13 @@
-import React from "react";
-import ProductInfo from "../ProductInfo/ProductInfo";
+import React from "react";import ProductInfo from "../ProductInfo/ProductInfo";
 import {IProduct} from "@/utils/interfaces";
-import Link from "next/link";
 
 type ProductCardProps = {
   product: IProduct;
+  goDetail: () => void;
 };
 
-const ProductCard = ({product}: ProductCardProps) => {
-  const {imageURL, name, SKU} = product;
+const ProductCard = ({product, goDetail}: ProductCardProps) => {
+  const {imageURL, name} = product;
   return (
     <div className="flex justify-between w-full max-w-[1120px]  ">
       <img
@@ -18,15 +17,15 @@ const ProductCard = ({product}: ProductCardProps) => {
       />
       <div className="flex flex-col gap-8">
         <ProductInfo product={product} />
-        <Link
-          href={`/${SKU}`}
+        <button
+          onClick={goDetail}
           className="rounded-xl w-1/2 block px-4 py-2 bg-promart-orange text-white text-base font-semibold text-center
           hover:bg-promart-soft-orange hover:text-promart-dark-gray transition-all duration-300 ease-in-out
           active:transform active:scale-95 active:bg-promart-dark-gray active:text-promart-orange
           "
         >
           Ver detalle
-        </Link>
+        </button>
       </div>
     </div>
   );
