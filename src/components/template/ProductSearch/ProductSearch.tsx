@@ -43,7 +43,7 @@ const ProductSearch = () => {
       <div className="px-40 pt-14 max-lg:px-4">
         <Header />
         {state === 1 && (
-          <div className="flex flex-col items-center gap-16 flex-grow pb-16">
+          <div className="flex flex-col items-center gap-16 flex-grow pb-16 max-lg:gap-8">
             <Header1 text="¡Encuentra el producto ideal para tu hogar!" />
             <SearchBar
               handleSearch={handleSearch}
