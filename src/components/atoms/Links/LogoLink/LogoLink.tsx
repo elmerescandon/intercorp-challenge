@@ -4,8 +4,14 @@ import React from "react";
 
 const LogoLink = () => {
   return (
-    <Link href="/">
-      <Image src="/logo_promart.svg" alt="logo" width={160} height={100} />
+    <Link href="/" className="cursor-pointer">
+      <Image
+        src="/logo_promart.svg"
+        alt="logo"
+        width={160}
+        height={100}
+        className="hover:scale-105 transition-transform duration-300 ease-in-out"
+      />
     </Link>
   );
 };
