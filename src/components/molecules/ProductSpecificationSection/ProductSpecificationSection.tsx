@@ -17,7 +17,7 @@ const ProductSpecificationSection = ({
           <WrenchScrewdriverIcon className="w-8 h-8 text-promart-orange" />
           <Header3 text="Ficha Ténica" />
         </div>
-        <div className="flex gap-8">
+        <div className="flex gap-8 max-lg:flex-col max-lg:gap-0">
           <ProductSpecificationsColumn
             specs={specs.slice(0, specs.length / 2)}
           />
