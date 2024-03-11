@@ -40,7 +40,7 @@ const ProductSearch = () => {
 
   return (
     <div>
-      <div className="px-40 pt-14">
+      <div className="px-40 pt-14 max-lg:px-4">
         <Header />
         {state === 1 && (
           <div className="flex flex-col items-center gap-16 flex-grow pb-16">
