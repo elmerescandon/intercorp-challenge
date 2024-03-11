@@ -5,14 +5,15 @@ export interface IBenefit {
 }
 
 export interface IProduct {
+  imageURL: string;
   url: string;
   category: string;
   name: string;
   brand: string;
   SKU: string;
-  regularPrice: string;
-  offerPrice: string;
-  discount: string;
+  regularPrice: number;
+  offerPrice: number;
+  discount: number;
   description: string;
   characteristics: string;
 }
