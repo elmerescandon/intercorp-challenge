@@ -39,7 +39,7 @@ const SearchBar = ({
         {loading && <Loader />}
       </form>
       <Small
-        text="Ejemplo: 1000287815 (Cámara Web), 9996349 (Refrigeradora Blackline) "
+        text="Ejemplo: 140558 (Mesa plegable), 146570 (Mat Felpudo) "
         color="text-promart-subtle-gray"
       />
       <div className="w-full h-3 pb-8 text-center">
