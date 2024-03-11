@@ -17,11 +17,11 @@ class VTEXFetch {
       const responseProduct = await fetch(
         `${VTEXFetch.url}/catalog_system/pub/products/search?fq=skuId:${SKU}`
       );
-
-      if (!responseProduct.ok)
+      if (!responseProduct.ok) {
         throw new Error(
-          "Error al recibir data de PROMART, inténtelo más tarde"
+          "No se encontró el producto con el SKU indicado. Inténtelo de nuevo."
         );
+      }
 
       const responseData: IVTEXProduct[] = await responseProduct.json();
       return responseData;
