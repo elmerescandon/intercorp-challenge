@@ -7,7 +7,7 @@ import React from "react";
 
 const ProductSearch = () => {
   return (
-    <div className="h-screen  ">
+    <div>
       <div className="px-40 pt-14">
         <Header />
         <div className="flex flex-col items-center gap-16 flex-grow pb-16">
