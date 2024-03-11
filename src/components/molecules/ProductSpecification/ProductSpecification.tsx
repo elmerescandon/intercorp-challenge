@@ -15,7 +15,7 @@ const ProductSpecification = ({
       w-full
       className={`flex  w-full
       ${
-        spectText.length > 50
+        spectText.length > 40
           ? "flex-col justify-start items-start gap-2"
           : "flex-row justify-between items-center"
       }
