@@ -1,5 +1,4 @@
-"use client";
-import ProductMain from "@/components/molecules/ProductMain/ProductMain";
+"use client";import ProductMain from "@/components/molecules/ProductMain/ProductMain";
 import ProductSpecificationSection from "@/components/molecules/ProductSpecificationSection/ProductSpecificationSection";
 import Footer from "@/components/organisms/Footer/Footer";
 import Header from "@/components/organisms/Header/Header";
@@ -17,7 +16,6 @@ const ProductPage = ({productId}: ProductPageProps) => {
   const [product, setProduct] = useState<IProduct | null>(null);
   const [specs, setSpecs] = useState<IProductSpecification[]>([]);
   const [alert, setAlert] = useState("");
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async (productId: string) => {
