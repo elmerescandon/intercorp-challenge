@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type {Config} from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -8,10 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        "promart-orange": "#FF6E00",
+        "promart-soft-orange": "#FFEBDB",
+        "promart-soft-gray": "#F6F6F6",
+        "promart-gray": "#F1F2F4",
+        "promart-subtle-gray": "#A3A3A3",
+        "promart-dark-gray": "#4E4E4E",
       },
     },
   },
