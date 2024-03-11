@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Reto Técnico - Intercorp Retail
+Este es un reto técnico para el puesto de Frontend Developer en Intercorp Retail.
 
-## Getting Started
 
-First, run the development server:
+La página [Promart SKU Finder](https://promart-sku-product-ffe61.web.app/) permite al usuario encontrar el SKU que desee de acuerdo al e-commerce de PROMART Perú.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologías
+La aplicación cuenta con las siguientes tecnologías
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- TypeScript
+- React v18
+- NextJS v14.1
+- Tailwind CSS v3.3
+- Heroicons v2.1
+- Figma 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Diseño
 
-To learn more about Next.js, take a look at the following resources:
+Se realizó un sistema de diseño de acuerdo a Atomic Design, la maqueta realizada en Figma se puede encontrar [aquí](https://www.figma.com/file/fkbONWqhe4rM6Ug7ybkcjY/Mockup---Promart-Reto-Intercorp?type=design&node-id=0%3A1&mode=design&t=F3nsWBN4zv3EcRAI-1)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Autor
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Elmer Raúl Escandón Tufino. Contáctame enviando un e-mail a elmer.escandontufino@gmail.com.
