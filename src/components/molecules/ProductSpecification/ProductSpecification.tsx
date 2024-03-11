@@ -13,15 +13,11 @@ const ProductSpecification = ({
     <div
       flex-col
       w-full
-      className={`flex  w-full
-      ${
+      className={`flex  w-full ${
         spectText.length > 40
           ? "flex-col justify-start items-start gap-2"
           : "flex-row justify-between items-center"
-      }
-    
-    
-    `}
+      }`}
     >
       <p className="font-medium text-base text-black">{specName}</p>
       <p className="font-medium text-base text-promart-subtle-gray ">
