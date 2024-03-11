@@ -1,12 +1,12 @@
 "use client";
-import ProductDetail from "@/components/template/ProductDetail/ProductDetail";
+import ProductPage from "@/components/template/ProductPage/ProductPage";
 import React from "react";
 
 const page = ({params}: {params: {productId: string}}) => {
   const {productId} = params;
   return (
     <div>
-      <ProductDetail productId={productId} />
+      <ProductPage productId={productId} />
     </div>
   );
 };
