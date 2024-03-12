@@ -1,6 +1,4 @@
-import axios from "axios";
 import {IVTEXProduct} from "./VTEX.interface";
-
 class VTEXFetch {
   private static instance: VTEXFetch;
   private static url = "https://www.promart.pe/api";
@@ -15,7 +13,7 @@ class VTEXFetch {
 
   static async getProductBySearch(SKU: string) {
     try {
-      const res = await fetch(`/api/vtex?skuId=${SKU}`, {
+      const res = await fetch(`/api/vtex`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
