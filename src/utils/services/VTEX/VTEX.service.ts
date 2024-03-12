@@ -13,14 +13,11 @@ class VTEXFetch {
 
   static async getProductBySearch(SKU: string) {
     try {
-      const res = await fetch(`/api/vtex`, {
-        method: "POST",
+      const res = await fetch(`/api/vtex?skuId=${SKU}`, {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          skuId: SKU,
-        }),
       });
 
       if (!res.ok) {
