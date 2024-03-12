@@ -1,5 +1,4 @@
-"use client";
-import Header1 from "@/components/atoms/Text/Header1/Header1";
+"use client";import Header1 from "@/components/atoms/Text/Header1/Header1";
 import ProductCard from "@/components/molecules/ProductCard/ProductCard";
 import SearchBar from "@/components/molecules/SearchBar/SearchBar";
 import BenefitSection from "@/components/organisms/BenefitSection/BenefitSection";
@@ -10,6 +9,7 @@ import VTEXFetch from "@/utils/services/VTEX/VTEX.service";
 import {VTEXProductSpecs, VTEXProductToProduct, delay} from "@/utils/utils";
 import React, {useState} from "react";
 import ProductPage from "../ProductPage/ProductPage";
+import {IVTEXProduct} from "@/utils/services/VTEX/VTEX.interface";
 
 const ProductSearch = () => {
   const [loading, setLoading] = useState(false);
@@ -23,7 +23,21 @@ const ProductSearch = () => {
       setAlert("");
       setLoading(true);
       await delay(300);
-      const product = await VTEXFetch.getProductBySearch(value);
+      console.log("HELLO PERUU");
+      const res = await fetch(
+        `https://us-central1-promart-sku-product.cloudfunctions.net/getData?skuId=${value}`,
+        {
+          method: "GET",
+          mode: "cors",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+            // "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+      console.log(res);
+      const product: IVTEXProduct[] = await res.json();
       if (product.length === 0) {
         setAlert("No se encontró el SKU indicado.");
         setLoading(false);
@@ -33,6 +47,7 @@ const ProductSearch = () => {
       setSpecs(VTEXProductSpecs(product[0]));
       setLoading(false);
     } catch (e) {
+      console.log(e);
       setLoading(false);
       setAlert((e as Error).message);
     }
