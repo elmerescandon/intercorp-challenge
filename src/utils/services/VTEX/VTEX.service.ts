@@ -1,5 +1,4 @@
-import {IVTEXProduct} from "./VTEX.interface";
-class VTEXFetch {
+import {IVTEXProduct} from "./VTEX.interface";class VTEXFetch {
   private static instance: VTEXFetch;
   private static url = "https://www.promart.pe/api";
 
@@ -13,18 +12,26 @@ class VTEXFetch {
 
   static async getProductBySearch(SKU: string) {
     try {
-      const res = await fetch(`/api/vtex?skuId=${SKU}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (!res.ok) {
-        throw new Error("No se ha podido obtener la información del producto.");
-      }
+      console.log("HELLO PERUU");
+      const res = await fetch(
+        `https://us-central1-promart-sku-product.cloudfunctions.net/getData?skuId=${SKU}`,
+        {
+          method: "GET",
+          mode: "cors",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+            // "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+      console.log("HELLO PERUU");
+      // console.log(res);
+      // if (!res.ok) {
+      //   throw new Error("No se ha podido obtener la información del producto.");
+      // }
       const responseData = await res.json();
-      return responseData.data as IVTEXProduct[];
+      return responseData as IVTEXProduct[];
     } catch (e) {
       throw e;
     }
