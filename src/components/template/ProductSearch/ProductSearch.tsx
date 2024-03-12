@@ -1,5 +1,4 @@
-"use client";
-import Header1 from "@/components/atoms/Text/Header1/Header1";
+"use client";import Header1 from "@/components/atoms/Text/Header1/Header1";
 import ProductCard from "@/components/molecules/ProductCard/ProductCard";
 import SearchBar from "@/components/molecules/SearchBar/SearchBar";
 import BenefitSection from "@/components/organisms/BenefitSection/BenefitSection";
@@ -22,6 +21,7 @@ const ProductSearch = () => {
     try {
       setAlert("");
       setLoading(true);
+      console.log("Handling Search...");
       await delay(300);
       const product = await VTEXFetch.getProductBySearch(value);
       if (product.length === 0) {
