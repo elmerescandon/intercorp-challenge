@@ -1,6 +1,7 @@
-import {NextResponse} from "next/server";export async function POST(request: Request) {
-  const postData: {skuId: string} = await request.json();
-  const {skuId} = postData;
+import {NextResponse} from "next/server";
+export async function GET(request: Request) {
+  const url = new URL(request.url);
+  const skuId = url.searchParams.get("skuId");
 
   try {
     const res = await fetch(
@@ -24,5 +25,3 @@ import {NextResponse} from "next/server";export async function POST(request: Req
     );
   }
 }
-
-export const dynamic = "force-static";
