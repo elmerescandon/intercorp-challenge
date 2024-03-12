@@ -15,18 +15,15 @@ class VTEXFetch {
 
   static async getProductBySearch(SKU: string) {
     try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_MYPAGE_URL}/api/vtex?skuId=${SKU}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            skuId: SKU,
-          }),
-        }
-      );
+      const res = await fetch(`/api/vtex?skuId=${SKU}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          skuId: SKU,
+        }),
+      });
 
       if (!res.ok) {
         throw new Error("No se ha podido obtener la información del producto.");
