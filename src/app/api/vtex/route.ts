@@ -1,6 +1,4 @@
-import {NextResponse} from "next/server";
-
-export async function POST(request: Request) {
+import {NextResponse} from "next/server";export async function POST(request: Request) {
   const postData: {skuId: string} = await request.json();
   const {skuId} = postData;
 
