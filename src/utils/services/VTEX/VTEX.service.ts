@@ -1,3 +1,4 @@
+import axios from "axios";
 import {IVTEXProduct} from "./VTEX.interface";
 
 class VTEXFetch {
@@ -14,17 +15,24 @@ class VTEXFetch {
 
   static async getProductBySearch(SKU: string) {
     try {
-      const responseProduct = await fetch(
-        `${VTEXFetch.url}/catalog_system/pub/products/search?fq=skuId:${SKU}`
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_MYPAGE_URL}/api/vtex?skuId=${SKU}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            skuId: SKU,
+          }),
+        }
       );
-      if (!responseProduct.ok) {
-        throw new Error(
-          "No se encontró el producto con el SKU indicado. Inténtelo de nuevo."
-        );
-      }
 
-      const responseData: IVTEXProduct[] = await responseProduct.json();
-      return responseData;
+      if (!res.ok) {
+        throw new Error("No se ha podido obtener la información del producto.");
+      }
+      const responseData = await res.json();
+      return responseData.data as IVTEXProduct[];
     } catch (e) {
       throw e;
     }
